@@ -18,7 +18,7 @@ const movieSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    languages:{
+    language:{
         type:String,
         required:true,
         default:"English"
@@ -31,12 +31,12 @@ const movieSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    relaeaseDate:{
+    releaseStatus:{
         type:String,
         required:true,
         default:"RELEASED"
     },
-},{timeStamps:true});
+},{timestamps:true});
 
 const Movie=mongoose.model('Movie', movieSchema); // Creates a new model
 

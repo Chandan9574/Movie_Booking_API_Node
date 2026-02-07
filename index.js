@@ -6,7 +6,8 @@ console.log("PORT =", process.env.PORT);
 console.log("MONGO_URI =", process.env.MONGO_URI);
 
 const mongoose=require('mongoose');
-const Movie=require('./models/movie.model');
+
+const MovieRoutes = require('./routes/movie.routes');
 
 
 // env.config();
@@ -14,6 +15,8 @@ const app = express(); // express application object
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+MovieRoutes(app); //invoking movie routes
 
 app.get('/home', (req, res) => {
     console.log("Hitting/home");
