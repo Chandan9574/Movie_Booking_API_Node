@@ -4,13 +4,15 @@
   "description": "This is Backend API Application for movie Booking",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^17.2.3",
+    "body-parser": "^2.2.2",
+    "dotenv": "^17.2.4",
     "express": "^4.22.1",
     "mongoose": "^9.1.6"
   }
