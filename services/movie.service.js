@@ -1,6 +1,16 @@
 // Here we write our business project
 const Movie = require('../models/movie.model');
 
+const createMovie = async(data)=>{
+    const movie = await Movie.create(data);
+    return movie;
+}
+
+const deleteMovie = async(id)=>{
+    const response = await Movie.findByIdAndDelete(id);
+    return response;
+}
+
 // this function helps in writting custom logic
 const getMovieById = async(id)=>{
     const movie = await Movie.findById(id);
@@ -8,15 +18,15 @@ const getMovieById = async(id)=>{
     if(!movie){
         return{
             err:'No Movie Found for the corresponding id provided',
-            code: 500
+            code: 404
         }
-        console.log("undefined");
     };
 
-    console.log("Movie found", movie.id);
     return movie;
 }
 
 module.exports = {
+    createMovie,
+    deleteMovie,
     getMovieById
 }
