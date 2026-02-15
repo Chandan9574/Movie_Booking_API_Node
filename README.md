@@ -16,8 +16,8 @@ Core backend modules are implemented and tested. Additional improvements and opt
 
 ## 🌿 Branch Structure
 
-- `main` – Stable and tested code
-- `Features_*` – Feature-specific development branches (e.g., Movie CRUD, Booking, Payment, Authentication)
+- `master` – Stable and tested code
+- `Features_1_Movie_CRUD_API` – Feature-specific development branches (e.g., Movie CRUD, Booking, Payment, Authentication)
 
 Development is done in feature branches and merged into `main` after testing.
 
