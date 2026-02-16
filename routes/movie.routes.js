@@ -23,6 +23,10 @@ const routes = (app)=>{
     app.patch('/mba/api/v1/movies/:id', // for partial update
         movieController.updateMovie
     );
+
+    app.get('/mba/api/v1/movies',
+        movieController.getMovies
+    )
 }
 
 module.exports = routes;
