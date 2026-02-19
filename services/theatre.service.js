@@ -5,9 +5,16 @@ const createTheatre = async(data)=>{
     try{
     const response = await Theatre.create(data);
     return response;
-    }catch(err){
+    }catch(error){
+        if(error.name=="ValidationError"){
+            let err={}; // response object
+            Object.keys(error.errors).forEach((key)=>{
+                err[key] = error.errors[key].message;
+            });
+            return {err: err, code: 422};
+        }
         console.log(err);
-        throw err;
+        throw err;arr
     }
 }
 
