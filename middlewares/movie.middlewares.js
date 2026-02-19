@@ -11,7 +11,7 @@ const badRequestResponse={
 
 
 const validateMovieCreateRequest = async (req, res, next) => {
-    // validate the movie nam
+    // validate the movie name
     if(!req.body.name){
         badRequestResponse.err = "The name of the movie is not present in the request";
         return res.status(400).json(badRequestResponse); // 400->Bad Request means the client is not sending the request as required properly
