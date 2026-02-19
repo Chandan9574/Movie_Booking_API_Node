@@ -9,6 +9,7 @@ console.log("MONGO_URI =", process.env.MONGO_URI);
 const mongoose=require('mongoose');
 
 const MovieRoutes = require('./routes/movie.routes');
+const theatreRoutes = require('./routes/theatre.routes');
 
 
 // env.config();
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 MovieRoutes(app); //invoking movie routes
+theatreRoutes(app); //invoking theatre routes
 
 app.get('/home', (req, res) => {
     console.log("Hitting/home");

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
  * Defines the schema of theatre resource to be stored in the database
  */
 
-const theatreSchema = new mongoose.SchemaTypes({
+const theatreSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -18,13 +18,12 @@ const theatreSchema = new mongoose.SchemaTypes({
     },
 
     pincode: {
-        type: Number,
+        type: String,
         required: true
     },
 
     address: String
-
-}, {timestamp: true});
+}, {timestamps: true});
 
 const Theatre = mongoose.model('Theatre', theatreSchema); // create a new model
 // mongoose.model takes two parameters (modelname, schema)
