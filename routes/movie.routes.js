@@ -8,7 +8,7 @@ const routes = (app)=>{
         movieController.createMovie
     );
 
-    app.delete('/mba/api/v1/movies/:movieId',
+    app.delete('/mba/api/v1/movies/:id',
         movieController.deleteMovie
     );
 
