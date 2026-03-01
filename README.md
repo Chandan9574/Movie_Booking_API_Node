@@ -17,19 +17,20 @@ Core backend modules are implemented and tested. Additional improvements and opt
 ## 🌿 Branch Structure
 
 - `master` – Stable and tested code
-- `Features_1_Movie_CRUD_API` – Feature-specific development branches (e.g., Movie CRUD, Booking, Payment, Authentication)
+- `Features_1_Movie_CRUD_API` – Feature-specific development branches (e.g., Movie CRUD, Booking)
+- `Features_2_Theatre_CRUD_API` - Feature-specific development branches (e.g., Movie CRUD)
 
-Development is done in feature branches and merged into `main` after testing.
+Development is done in feature branches and merged into `master` after testing.
 
 ---
 
 ## ✅ Features Implemented
 
 - User Registration & Login (JWT Authentication)
-- Role-Based Access Control (Admin, Customer, Viewer)
+- Role-Based Access Control (Admin, Customer, Viewer) (Not done yet)
 - Movie Management (Create, Read, Update, Delete)
-- Booking workflow with validation logic
-- Payment processing and booking status update
+- Booking workflow with validation logic  (Not Done yet)
+- Payment processing and booking status update (Not done Yet)
 - MongoDB integration using Mongoose ODM
 - MVC architecture with modular routing
 - Middleware-based authentication & error handling
@@ -43,7 +44,7 @@ Development is done in feature branches and merged into `main` after testing.
 - **Database:** MongoDB, Mongoose
 - **Authentication:** JSON Web Token (JWT)
 - **Architecture:** MVC Pattern
-- **Tools:** Postman, Git, GitHub
+- **Tools:** Postman, Git, GitHub, MongoDB Compass
 
 ---
 
