@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const env=require('dotenv');
 require("dotenv").config();
 
 console.log("PORT =", process.env.PORT);
@@ -7,12 +8,16 @@ console.log("MONGO_URI =", process.env.MONGO_URI);
 
 const mongoose=require('mongoose');
 
+const MovieRoutes = require('./routes/movie.routes');
+
 
 // env.config();
 const app = express(); // express application object
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+MovieRoutes(app); //invoking movie routes
 
 app.get('/home', (req, res) => {
     console.log("Hitting/home");
@@ -28,6 +33,17 @@ app.listen(process.env.PORT, async () => {
     try{
     await mongoose.connect(process.env.MONGO_URI); // connects to the mongo server
     console.log("Successfully connected to mongo");
+    // await Movie.create({
+    //     name: "Indian",
+    //     description:"Country lover movie",
+    //     casts:["Sunny Dewgan", "Kriti Sanon","Jaqueline"],
+    //     director:"Satrudhan Mishra",
+    //     trailerUrl:"https://youtu.be/bh3hR4jHlXI?list=RDbh3hR4jHlXI",
+    //     language:"Hindi",
+    //     releaseDate:"14-02-2025",
+    //     releaseStatus:"RELEASED"
+    // });
+
     }catch(err){
         console.log("Not able to connect mongo",err);
     }
